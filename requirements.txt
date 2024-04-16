@@ -1,0 +1,6 @@
+git+https://github.com/openai/CLIP.git@a1d0717
+ffmpeg-python==0.2
+nncore==0.4.2
+scikit-learn==1.4.1.post1
+torch==2.2.1
+torchvision==0.17.1

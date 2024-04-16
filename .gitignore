@@ -1,0 +1,11 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Temporary data
+/checkpoints
+/data
+/work_dirs
+.DS_Store
+._*
