@@ -52,7 +52,7 @@ pip install -r requirements.txt
 
 ```shell
 # Prepare datasets in one command
-bash tools/prepared_data.sh
+bash tools/prepare_data.sh
 ```
 
 #### Option 2: Reproduce our data pre-processing pipeline.
