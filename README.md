@@ -286,9 +286,237 @@ We provide multiple pre-trained models and training logs here. All the models we
       <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tacos.log">log</a>
     </td>
   </tr>
+  <tr>
+    <td align="center" rowspan="6">
+      <a href="https://doi.org/10.1007/978-3-319-10590-1_51">YouTube<br>Highlights</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/yeliudev/R2-Tuning/blob/main/configs/youtube/r2_tuning_youtube_dog.py">Dog</a>
+    </td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">74.26</td>
+    <td align="center">
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_youtube_dog-702bd293.pth">model</a> |
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_youtube_dog.log">log</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/yeliudev/R2-Tuning/blob/main/configs/youtube/r2_tuning_youtube_gym.py">Gymnastics</a>
+    </td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">72.07</td>
+    <td align="center">
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_youtube_gym-ff68b1b3.pth">model</a> |
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_youtube_gym.log">log</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/yeliudev/R2-Tuning/blob/main/configs/youtube/r2_tuning_youtube_par.py">Parkour</a>
+    </td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">81.02</td>
+    <td align="center">
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_youtube_par-27442af0.pth">model</a> |
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_youtube_par.log">log</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/yeliudev/R2-Tuning/blob/main/configs/youtube/r2_tuning_youtube_ska.py">Skating</a>
+    </td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">76.26</td>
+    <td align="center">
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_youtube_ska-dad28398.pth">model</a> |
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_youtube_ska.log">log</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/yeliudev/R2-Tuning/blob/main/configs/youtube/r2_tuning_youtube_ski.py">Skiing</a>
+    </td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">74.36</td>
+    <td align="center">
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_youtube_ski-df2edc4c.pth">model</a> |
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_youtube_ski.log">log</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/yeliudev/R2-Tuning/blob/main/configs/youtube/r2_tuning_youtube_sur.py">Surfing</a>
+    </td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">82.76</td>
+    <td align="center">
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_youtube_sur-d384d8b2.pth">model</a> |
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_youtube_sur.log">log</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" rowspan="10">
+      <a href="https://doi.org/10.1109/cvpr.2015.7299154">TVSum</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/yeliudev/R2-Tuning/blob/main/configs/tvsum/r2_tuning_tvsum_bk.py">BK</a>
+    </td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">91.23</td>
+    <td align="center">
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_bk-45b59440.pth">model</a> |
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_bk.log">log</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/yeliudev/R2-Tuning/blob/main/configs/tvsum/r2_tuning_tvsum_bt.py">BT</a>
+    </td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">92.35</td>
+    <td align="center">
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_bt-13683fdf.pth">model</a> |
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_bt.log">log</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/yeliudev/R2-Tuning/blob/main/configs/tvsum/r2_tuning_tvsum_ds.py">DS</a>
+    </td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">80.88</td>
+    <td align="center">
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_ds-d11b33d3.pth">model</a> |
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_ds.log">log</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/yeliudev/R2-Tuning/blob/main/configs/tvsum/r2_tuning_tvsum_fm.py">FM</a>
+    </td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">75.61</td>
+    <td align="center">
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_fm-2c8c119d.pth">model</a> |
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_fm.log">log</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/yeliudev/R2-Tuning/blob/main/configs/tvsum/r2_tuning_tvsum_ga.py">GA</a>
+    </td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">89.51</td>
+    <td align="center">
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_ga-58e79858.pth">model</a> |
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_ga.log">log</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/yeliudev/R2-Tuning/blob/main/configs/tvsum/r2_tuning_tvsum_ms.py">MS</a>
+    </td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">85.01</td>
+    <td align="center">
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_ms-d9b4f8fa.pth">model</a> |
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_ms.log">log</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/yeliudev/R2-Tuning/blob/main/configs/tvsum/r2_tuning_tvsum_pk.py">PK</a>
+    </td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">82.82</td>
+    <td align="center">
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_pk-1830ce03.pth">model</a> |
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_pk.log">log</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/yeliudev/R2-Tuning/blob/main/configs/tvsum/r2_tuning_tvsum_pr.py">PR</a>
+    </td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">90.39</td>
+    <td align="center">
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_pr-51d78fc9.pth">model</a> |
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_pr.log">log</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/yeliudev/R2-Tuning/blob/main/configs/tvsum/r2_tuning_tvsum_vt.py">VT</a>
+    </td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">89.81</td>
+    <td align="center">
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_vt-0069d8d3.pth">model</a> |
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_vt.log">log</a>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/yeliudev/R2-Tuning/blob/main/configs/tvsum/r2_tuning_tvsum_vu.py">VU</a>
+    </td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">—</td>
+    <td align="center">85.90</td>
+    <td align="center">
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_vu-6f8ebb4b.pth">model</a> |
+      <a href="https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_tvsum_vu.log">log</a>
+    </td>
+  </tr>
 </table>
-
-> Code & checkpoints for YouTube Highlights and TVSum will be ready soon.
 
 ## 📖 Citation
 

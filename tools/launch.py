@@ -28,7 +28,7 @@ def main():
     args = parse_args()
     cfg = nncore.Config.from_file(args.config)
 
-    launcher = comm.init_dist(launcher=args.launcher, timeout=timedelta(minutes=30))
+    launcher = comm.init_dist(launcher=args.launcher, timeout=timedelta(hours=1))
 
     if comm.is_main_process() and not args.eval and not args.dump:
         if args.work_dir is None:
