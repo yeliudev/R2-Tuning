@@ -28,7 +28,7 @@ class Grounding(Dataset):
                  use_cache=False,
                  min_video_len=-1,
                  max_video_len=-1,
-                 max_saliency_score=12,
+                 max_saliency=12,
                  fps=None,
                  unit=None):
         assert fps is not None
@@ -41,9 +41,7 @@ class Grounding(Dataset):
                 continue
             if max_video_len > 0 and float(anno['duration']) > max_video_len:
                 continue
-            if 'activitynet' in label_path:
-                anno['vid'] = f"v_{anno['vid']}"
-            elif 'tacos' in label_path:
+            if 'tacos' in label_path:
                 anno['vid'] = f"{anno['vid']}-cam-002"
             self.label.append(anno)
 
@@ -54,7 +52,7 @@ class Grounding(Dataset):
         self.use_cache = use_cache
         self.min_video_len = min_video_len
         self.max_video_len = max_video_len
-        self.max_saliency_score = max_saliency_score
+        self.max_saliency = max_saliency
         self.fps = fps
         self.unit = unit
 
@@ -108,8 +106,12 @@ class Grounding(Dataset):
         boundary = torch.Tensor(label['relevant_windows'])
         boundary = boundary.clamp(min=0, max=max_time)
 
-        indicator = boundary[:, 1] - boundary[:, 0] < 1 / self.fps
-        for idx in indicator.nonzero()[:, 0]:
+        inds = boundary[:, 1] - boundary[:, 0] < 0
+        for idx in inds.nonzero()[:, 0]:
+            boundary[idx] = boundary[idx].roll(1)
+
+        inds = boundary[:, 1] - boundary[:, 0] < 1 / self.fps
+        for idx in inds.nonzero()[:, 0]:
             center = boundary[idx].sum() / 2
             center = center.clamp(min=0.5 / self.fps, max=max_time - 0.5 / self.fps)
             boundary[idx, 0] = center - 0.5 / self.fps
@@ -121,11 +123,11 @@ class Grounding(Dataset):
     def bind_saliency(self, label, data):
         num_clips = data['video'].data.size(0)
 
-        if 'saliency_scores' in label:
+        if 'saliency_scores' in label and 'relevant_clip_ids' in label:
             saliency = torch.zeros(int(label['duration'] * self.fps))
             for idx, score in zip(label['relevant_clip_ids'], label['saliency_scores']):
-                saliency[int(idx * self.fps * 2)] = sum(score) / self.max_saliency_score
-            assert abs(saliency.size(0) - num_clips) < 5
+                saliency[idx] = sum(score) / self.max_saliency
+            assert saliency.size(0) >= num_clips and saliency.size(0) - num_clips < 5
             saliency = saliency[:num_clips]
         else:
             boundary_ind = data['boundary'].data * self.fps

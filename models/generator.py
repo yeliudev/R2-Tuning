@@ -20,7 +20,7 @@ class BufferList(nn.Module):
 
 class PointGenerator(nn.Module):
 
-    def __init__(self, buffer_size, strides, offset=False):
+    def __init__(self, strides, buffer_size, offset=False):
         super(PointGenerator, self).__init__()
 
         reg_range, last = [], 0
@@ -29,35 +29,34 @@ class PointGenerator(nn.Module):
             last = stride
         reg_range.append((last, float('inf')))
 
-        self.buffer_size = buffer_size
-        self.levels = len(strides)
         self.strides = strides
         self.reg_range = reg_range
+        self.buffer_size = buffer_size
         self.offset = offset
 
-        self.buffer_points = self._cache_points()
+        self.buffer = self._cache_points()
 
     def _cache_points(self):
-        points_list = []
-        for l, stride in enumerate(self.strides):
-            reg_range = torch.as_tensor(self.reg_range[l], dtype=torch.float)
-            lv_stride = torch.as_tensor(stride, dtype=torch.float)
+        buffer_list = []
+        for stride, reg_range in zip(self.strides, self.reg_range):
+            reg_range = torch.Tensor([reg_range])
+            lv_stride = torch.Tensor([stride])
             points = torch.arange(0, self.buffer_size, stride)[:, None]
             if self.offset:
                 points += 0.5 * stride
-            reg_range = reg_range[None].repeat(points.size(0), 1)
-            lv_stride = lv_stride[None].repeat(points.size(0), 1)
-            points_list.append(torch.cat((points, reg_range, lv_stride), dim=1))
-        return BufferList(points_list)
+            reg_range = reg_range.repeat(points.size(0), 1)
+            lv_stride = lv_stride.repeat(points.size(0), 1)
+            buffer_list.append(torch.cat((points, reg_range, lv_stride), dim=1))
+        buffer = BufferList(buffer_list)
+        return buffer
 
-    def forward(self, feats):
-        pts_list = []
-        feat_lens = [feat.size(1) for feat in feats]
-        feat_lens += [0] * (len(self.buffer_points) - len(feat_lens))
-        for feat_len, buffer_pts in zip(feat_lens, self.buffer_points):
-            if feat_len == 0:
+    def forward(self, pymid):
+        points = []
+        sizes = [p.size(1) for p in pymid] + [0] * (len(self.buffer) - len(pymid))
+        for size, buffer in zip(sizes, self.buffer):
+            if size == 0:
                 continue
-            assert feat_len <= buffer_pts.size(0), 'reached max buffer length'
-            pts = buffer_pts[:feat_len, :]
-            pts_list.append(pts)
-        return torch.cat(pts_list)
+            assert size <= buffer.size(0), 'reached max buffer size'
+            points.append(buffer[:size, :])
+        points = torch.cat(points)
+        return points

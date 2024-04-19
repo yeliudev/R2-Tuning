@@ -185,7 +185,7 @@ srun <slurm-args> python tools/launch.py <path-to-config>
 
 </details>
 
-Please refer to the [configs](https://github.com/yeliudev/R2-Tuning/blob/main/configs) folder for detailed settings of each model.
+Please refer to the [configs](https://github.com/yeliudev/R2-Tuning/tree/main/configs) folder for detailed settings of each model.
 
 ## 🏆 Evaluation
 

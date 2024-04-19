@@ -50,7 +50,7 @@ class R2Tuning(nn.Module):
         self.class_head = build_model(class_head_cfg, dims, 1)
         self.coord_head = build_model(coord_head_cfg, dims, 2)
 
-        self.generator = PointGenerator(buffer_size, strides)
+        self.generator = PointGenerator(strides, buffer_size)
 
         self.coef = nn.Parameter(torch.ones(len(strides)))
         self.loss = build_loss(loss_cfg)

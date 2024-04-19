@@ -41,11 +41,11 @@ class SampledNCELoss(nn.Module):
         batch_inds = torch.arange(video_emb.size(0), device=video_emb.device)
 
         pos_scores = saliency[batch_inds, pos_clip].unsqueeze(-1)
-        neg_msk = (saliency <= pos_scores) * video_msk
+        loss_msk = (saliency <= pos_scores) * video_msk
 
         scale = self.scale.exp().clamp(max=self.max_scale)
         i_sim = F.cosine_similarity(video_emb, query_emb, dim=-1) * scale
-        i_sim = i_sim + torch.where(neg_msk > 0, .0, float('-inf'))
+        i_sim = i_sim + torch.where(loss_msk > 0, .0, float('-inf'))
 
         loss = 0
 

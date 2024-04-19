@@ -26,9 +26,7 @@ class VideoDataset(Dataset):
         self.label, vids = [], set()
         if isinstance(label, list):
             for sample in label:
-                if 'activitynet' in anno_path:
-                    sample['vid'] = f"v_{sample['vid']}"
-                elif 'tacos' in anno_path:
+                if 'tacos' in anno_path:
                     sample['vid'] = f"{sample['vid']}-cam-002"
                 if sample['vid'] not in vids:
                     self.label.append(sample)
@@ -176,9 +174,7 @@ def main():
     npys = set(nncore.ls(args.frame_dir, ext='npy'))
 
     if isinstance(anno, list):
-        if 'activitynet' in args.anno_path:
-            label = [s for s in anno if f"v_{s['vid']}.npy" in npys]
-        elif 'tacos' in args.anno_path:
+        if 'tacos' in args.anno_path:
             label = [s for s in anno if f"{s['vid']}-cam-002.npy" in npys]
         else:
             label = [s for s in anno if f"{s['vid']}.npy" in npys]
@@ -186,13 +182,6 @@ def main():
         label = {k: v for k, v in anno.items() if f'{k}.npy' in npys}
 
     print(f'Total samples: {len(anno)} Filtered samples: {len(label)}')
-
-    if len(anno) > len(label):
-        name, ext = nncore.split_ext(args.anno_path)
-        out = f'{name}_filtered.{ext}'
-
-        print(f'Dumping filtered annotations to {out}')
-        nncore.dump(label, out)
 
     if args.video_feat_dir is None:
         info = f"{args.arch[4:].lower().replace('/', '').replace('-', '_')}_vid_k{args.k}"

@@ -1,10 +1,10 @@
 _base_ = 'datasets'
 # dataset settings
-dataset_type = 'Grounding'
+data_type = 'Grounding'
 data_root = 'data/ego4d/'
 data = dict(
     train=dict(
-        type=dataset_type,
+        type=data_type,
         label_path=data_root + 'nlq_train.jsonl',
         video_path=data_root + 'frames_224_0.5fps',
         cache_path=data_root + 'clip_b32_vid_k4',
@@ -14,7 +14,7 @@ data = dict(
         fps=0.5,
         loader=dict(batch_size=32, num_workers=4, pin_memory=True, shuffle=True)),
     val=dict(
-        type=dataset_type,
+        type=data_type,
         label_path=data_root + 'nlq_val.jsonl',
         video_path=data_root + 'frames_224_0.5fps',
         cache_path=data_root + 'clip_b32_vid_k4',
