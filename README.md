@@ -206,13 +206,20 @@ Then you can pack the `hl_{val,test}_submission.jsonl` files and submit them to 
 
 ## 💻 Single Video Inference
 
+> [!WARNING]
+> This feature is only compatible with `nncore==0.4.3`.
+
 Use the following command to perform moment retrieval using your own videos and queries.
 
+
 ```
+# Make sure you are using the correct version
+pip install nncore==0.4.3
+
 python tools/inference.py <path-to-video> <query> [--config <path-to-config> --checkpoint <path-to-checkpoint>]
 ```
 
-The default [checkpoint](https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_qvhighlights-ed516355.pth) was trained on QVHighlights using this [config](https://github.com/yeliudev/R2-Tuning/tree/main/configs/qvhighlights/r2_tuning_qvhighlights.py).
+The [checkpoint](https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_qvhighlights-ed516355.pth) trained on QVHighlights using this [config](https://github.com/yeliudev/R2-Tuning/tree/main/configs/qvhighlights/r2_tuning_qvhighlights.py) will be downloaded by default.
 
 ## 📦 Model Zoo
 

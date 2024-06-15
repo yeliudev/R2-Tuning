@@ -53,19 +53,15 @@ def main():
     cfg.model.init = True
 
     if args.checkpoint.startswith('http'):
-        out_path = args.checkpoint.split('/')[-1]
-        if not nncore.is_file(out_path):
-            print(f'Downloading checkpoint from {args.checkpoint}...')
-            nncore.download(args.checkpoint, progress=True)
-        args.checkpoint = out_path
+        args.checkpoint = nncore.download(args.checkpoint, out_dir='checkpoints')
 
-    print(f'Building model from {args.config}...')
+    print(f'Building model from {args.config}')
     model = build_model(cfg.model, dist=False).eval()
 
-    print(f'Loading checkpoint from {args.checkpoint}...')
-    load_checkpoint(model, args.checkpoint)
+    print(f'Loading checkpoint from {args.checkpoint}')
+    model = load_checkpoint(model, args.checkpoint, warning=False)
 
-    print(f'Loading video from {args.video}...')
+    print(f'Loading video from {args.video}')
     video = load_video(args.video, cfg)
 
     print(f'Query: {args.query}')
@@ -77,7 +73,7 @@ def main():
     with torch.inference_mode():
         pred = model(data)
 
-    print('\nPrediction:')
+    print('Prediction:')
     tab = [('Start time', 'End time', 'Score')]
     for b in pred['_out']['boundary'][:5].tolist():
         tab.append([round(n, 2) for n in b])
