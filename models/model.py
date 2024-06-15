@@ -90,7 +90,7 @@ class R2Tuning(nn.Module):
         query = torch.stack([e.permute(1, 0, 2) for e in emb])
         return query
 
-    def forward(self, data, mode):
+    def forward(self, data, mode='test'):
         video, query = data['video'], data['query']
 
         if hasattr(self, 'clip'):

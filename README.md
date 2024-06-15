@@ -11,6 +11,7 @@ This repository maintains the official implementation of the paper **$\boldsymbo
 
 ## 📮 News
 
+- **[2024.6.15]** Add support for [single video inference](#-single-video-inference).
 - **[2024.4.16]** Code and dataset release.
 - **[2024.3.31]** Our tech report is available on [arXiv](https://arxiv.org/abs/2404.00801).
 
@@ -202,6 +203,16 @@ python tools/launch.py <path-to-config> --checkpoint <path-to-checkpoint> --dump
 ```
 
 Then you can pack the `hl_{val,test}_submission.jsonl` files and submit them to [CodaLab](https://codalab.lisn.upsaclay.fr/competitions/6937).
+
+## 💻 Single Video Inference
+
+Use the following command to perform moment retrieval using your own videos and queries.
+
+```
+python tools/inference.py <path-to-video> <query> [--config <path-to-config> --checkpoint <path-to-checkpoint>]
+```
+
+The default [checkpoint](https://huggingface.co/yeliudev/R2-Tuning/resolve/main/checkpoints/r2_tuning_qvhighlights-ed516355.pth) was trained on QVHighlights using this [config](https://github.com/yeliudev/R2-Tuning/tree/main/configs/qvhighlights/r2_tuning_qvhighlights.py).
 
 ## 📦 Model Zoo
 
