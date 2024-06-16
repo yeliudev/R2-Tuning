@@ -2,6 +2,7 @@
 
 [![arXiv](https://badgen.net/badge/arXiv/2404.00801/red?cache=300)](https://arxiv.org/abs/2404.00801)
 [![License](https://badgen.net/badge/License/BSD%203-Clause%20License?color=blue&cache=300)](https://github.com/yeliudev/R2-Tuning/blob/main/LICENSE)
+[![Hugging Face Spaces](https://huggingface.co/datasets/huggingface/badges/resolve/main/open-in-hf-spaces-sm-dark.svg)](https://huggingface.co/spaces/yeliudev/R2-Tuning)
 
 [**Installation**](#-installation) | [**Dataset**](#-dataset) | [**Training**](#-training) | [**Evaluation**](#-evaluation) | [**Model Zoo**](#-model-zoo)
 
@@ -9,8 +10,9 @@ This repository maintains the official implementation of the paper **$\boldsymbo
 
 <p align="center"><img width="850" src=".github/model.jpg"></p>
 
-## 📮 News
+## 🔥 News
 
+- **[2024.6.16]** Check out our [online demo](https://huggingface.co/spaces/yeliudev/R2-Tuning) on 🤗 Hugging Face Spaces.
 - **[2024.6.15]** Add support for [single video inference](#-single-video-inference).
 - **[2024.4.16]** Code and dataset release.
 - **[2024.3.31]** Our tech report is available on [arXiv](https://arxiv.org/abs/2404.00801).
@@ -207,14 +209,14 @@ Then you can pack the `hl_{val,test}_submission.jsonl` files and submit them to 
 ## 💻 Single Video Inference
 
 > [!WARNING]
-> This feature is only compatible with `nncore==0.4.3`.
+> This feature is only compatible with `nncore==0.4.4`.
 
 Use the following command to perform moment retrieval using your own videos and queries.
 
 
 ```
 # Make sure you are using the correct version
-pip install nncore==0.4.3
+pip install nncore==0.4.4
 
 python tools/inference.py <path-to-video> <query> [--config <path-to-config> --checkpoint <path-to-checkpoint>]
 ```
