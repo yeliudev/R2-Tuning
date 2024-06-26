@@ -76,6 +76,7 @@ def main():
     print('Prediction:')
     tab = [('Start time', 'End time', 'Score')]
     for b in pred['_out']['boundary'][:5].tolist():
+        b[:2] = [min(max(0, n), video.size(1) / cfg.data.val.fps) for n in b[:2]]
         tab.append([round(n, 2) for n in b])
     print(tabulate(tab))
 
