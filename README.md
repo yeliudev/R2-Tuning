@@ -12,6 +12,7 @@ This repository maintains the official implementation of the paper **$\boldsymbo
 
 ## 🔥 News
 
+- **[2024.7.2]** Our paper has been accepted by ECCV 2024.
 - **[2024.6.16]** Check out our [online demo](https://huggingface.co/spaces/yeliudev/R2-Tuning) on 🤗 Hugging Face Spaces.
 - **[2024.6.15]** Add support for [single video inference](#-single-video-inference).
 - **[2024.4.16]** Code and dataset release.
@@ -543,10 +544,10 @@ We provide multiple pre-trained models and training logs here. All the models we
 Please kindly cite our paper if you find this project helpful.
 
 ```bibtex
-@article{liu2024tuning,
+@inproceedings{liu2024tuning,
   title={$R^2$-Tuning: Efficient Image-to-Video Transfer Learning for Video Temporal Grounding},
   author={Liu, Ye and He, Jixuan and Li, Wanhua and Kim, Junsik and Wei, Donglai and Pfister, Hanspeter and Chen, Chang Wen},
-  journal={arXiv preprint arXiv:2404.00801},
+  booktitle={Proceedings of the European Conference on Computer Vision (ECCV)},
   year={2024}
 }
 ```
